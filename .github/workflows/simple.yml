@@ -1,6 +1,7 @@
-name: Shell Commands  
+name: Shell Commands    #this is the name of the workflow. Workflow can have multiple jobs under it. Like this one has 2 jobs
+                        #echo a string and multiline script
 
-on: [push]            #this job will run on any push event/action
+on: [push]            #this job will run on any 'push' event/action
 
 jobs:
   run-shell-command:            #name of the job
@@ -13,4 +14,11 @@ jobs:
         run: |                    #pipe function to run multiple commands
           node -v 
           npm -v
+      
+      - name: python Command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+
 
