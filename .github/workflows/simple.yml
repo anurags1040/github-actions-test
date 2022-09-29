@@ -1,0 +1,16 @@
+name: Shell Commands  
+
+on: [push]            #this job will run on any push event/action
+
+jobs:
+  run-shell-command:            #name of the job
+    runs-on: ubuntu-latest
+    steps:                       #use an array of steps
+      - name: echo a string
+        run: echo "Hello World"
+      
+      - name: multiline script
+        run: |                    #pipe function to run multiple commands
+          node -v 
+          npm -v
+
