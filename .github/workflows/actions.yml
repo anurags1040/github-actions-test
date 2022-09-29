@@ -11,6 +11,12 @@ jobs:
        run: |
         ls 
         pwd
+     - name: Checkout
+       uses: actions/checkout@v1     #this will authenticate your repository, and will have some id and we can checkout to that particular commit and pull the code (git fetch/pull) 
+     - name: List files after checkout
+       run: |
+        ls 
+        pwd
      - name: Simple JS Action
        id: greet
        uses: actions/hello-world-javascript-action@main
