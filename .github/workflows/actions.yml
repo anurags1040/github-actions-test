@@ -7,7 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Simple JS Action
+       id: greet
        uses: actions/hello-world-javascript-action@main
        with:
          who-to-greet: 'Anurag, please merge the PR'
+
+     - name: Log Greeting time
+       run: echo "${{ steps.greet.outputs.time }}"        #output of previous action (greeting Anurag). You need to give an id to the action
+                                                          # to reference it for the output. 
   
