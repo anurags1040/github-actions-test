@@ -4,7 +4,7 @@ name: Shell Commands    #this is the name of the workflow. Workflow can have mul
 on: [push]            #this job will run on any 'push' event/action
 
 jobs:
-  run-shell-command:            #name of the job
+  run-shell-command:            #name of the job. Each job can run in parallel in its own virtual machine
     runs-on: ubuntu-latest
     steps:                       #use an array of steps
       - name: echo a string
@@ -20,5 +20,15 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+  
+  run-windows-commands:      #name of the job. Each job can run in parallel in its own virtual machine
+    runs-on: windows-latest
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
+
 
 
