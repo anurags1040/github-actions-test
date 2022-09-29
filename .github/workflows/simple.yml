@@ -23,6 +23,7 @@ jobs:
   
   run-windows-commands:      #name of the job. Each job can run in parallel in its own virtual machine
     runs-on: windows-latest
+    needs: ["run-shell-command"]
     steps:
       - name: Directory PowerShell
         run: Get-Location
@@ -30,5 +31,5 @@ jobs:
         run: pwd
         shell: bash
 
-
+#you can even run the jobs one after the other. eg. Finish first job and then run the second job. Need you use 'needs' tab as in line 26
 
