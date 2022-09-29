@@ -9,5 +9,5 @@ jobs:
      - name: Simple JS Action
        uses: actions/hello-world-javascript-action@main
        with:
-         who-to-greet: 'Good Afternoon everyone!!'
+         who-to-greet: 'Anurag, please merge the PR'
   
