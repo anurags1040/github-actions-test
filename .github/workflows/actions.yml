@@ -1,8 +1,8 @@
 name: Actions Workflow
 
 on:
-  schedule:
-    - cron: "10 12 * * *"
+  # schedule:
+  #   - cron: "10 12 * * *"
 
   push:
 
