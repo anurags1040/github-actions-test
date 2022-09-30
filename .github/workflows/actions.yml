@@ -1,6 +1,9 @@
 name: Actions Workflow
 
 on:
+
+  repository_dispatch:
+    type: [build]
   # schedule:
   #   - cron: "10 12 * * *"
 
