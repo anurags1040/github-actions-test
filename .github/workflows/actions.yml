@@ -8,6 +8,17 @@ on:
   #   - cron: "10 12 * * *"
 
   push:
+    branches:
+      - master
+      - 'feature/*'    # matches anything that starts with feature/xyz etc
+      - 'feature/**'
+      - '!feature/featC'     #ignore this particular branch
+    
+    tags:
+      - v1.*
+    
+    paths:
+      - '**.js'
 
 jobs: 
   run-github-actions:
